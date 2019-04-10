@@ -1,15 +1,12 @@
 <?php
+
 namespace App\src\DAO;
+
 use PDO;
+use Exception;
 
 abstract class DAO
 {
-
-  
-    
-
-
-
     private $connection;
 
     private function checkConnection()
@@ -27,9 +24,9 @@ abstract class DAO
     {
         //Tentative de connexion à la base de données
         try{
-            $this->connection = new PDO(DB_HOST, DB_USER,DB_PASS);
+            $this->connection = new PDO(DB_HOST, DB_USER, DB_PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //Renvoi de la connexion
+            //On renvoie la connexion
             return $this->connection;
         }
         //On lève une erreur si la connexion échoue
@@ -37,9 +34,10 @@ abstract class DAO
         {
             die ('Erreur de connection :'.$errorConnection->getMessage());
         }
+
     }
 
-    protected function sql($sql, $parameters = null)
+    protected function createQuery($sql, $parameters = null)
     {
         if($parameters)
         {
@@ -47,9 +45,7 @@ abstract class DAO
             $result->execute($parameters);
             return $result;
         }
-        else{
-            $result = $this->checkConnection()->query($sql);
-            return $result;
-        }
+        $result = $this->checkConnection()->query($sql);
+        return $result;
     }
 }

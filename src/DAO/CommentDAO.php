@@ -6,25 +6,26 @@ use App\src\model\Comment;
 
 class CommentDAO extends DAO
 {
-    public function getCommentsFromArticle($idArt)
-    {
-        $sql = 'SELECT id, pseudo, content, date_added FROM comment WHERE article_id = ?';
-        $result = $this->sql($sql, [$idArt]);
-        $comments = [];
-        foreach ($result as $row) {
-            $commentId = $row['id'];
-            $comments[$commentId] = $this->buildObject($row);
-        }
-        return $comments;
-    }
-
-    private function buildObject(array $row)
+    private function buildObject($row)
     {
         $comment = new Comment();
         $comment->setId($row['id']);
         $comment->setPseudo($row['pseudo']);
         $comment->setContent($row['content']);
-        $comment->setDateAdded($row['date_added']);
+        $comment->setCreatedAt($row['createdAt']);
         return $comment;
+    }
+
+    public function getCommentsFromArticle($articleId)
+    {
+        $sql = 'SELECT id, pseudo, content, createdAt FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
+        $result = $this->createQuery($sql, [$articleId]);
+        $comments = [];
+        foreach ($result as $row) {
+            $commentId = $row['id'];
+            $comments[$commentId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $comments;
     }
 }

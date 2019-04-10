@@ -2,50 +2,48 @@
 
 namespace App\src\DAO;
 
+use App\config\Parameter;
 use App\src\model\Article;
 
 class ArticleDAO extends DAO
 {
-    public function getArticles()
-    {
-        $sql = 'SELECT id, title, content, author, date_added FROM article ORDER BY id DESC';
-        $result = $this->sql($sql);
-        $articles = [];
-        foreach ($result as $row) {
-            $articleId = $row['id'];
-            $articles[$articleId] = $this->buildObject($row);
-        }
-        return $articles;
-    }
-
-    public function getArticle($idArt)
-    {
-        $sql = 'SELECT id, title, content, author, date_added FROM article WHERE id = ?';
-        $result = $this->sql($sql, [$idArt]);
-        $row = $result->fetch();
-        if($row) {
-            return $this->buildObject($row);
-        } else {
-            echo 'Aucun article existant avec cet identifiant';
-        }
-    }
-
-    public function addArticle($article)
-    {
-        //Permet de récupérer les variables $title, $content et $author
-        extract($article);
-        $sql = 'INSERT INTO article (title, content, author, date_added) VALUES (?, ?, ?, NOW())';
-        $this->sql($sql, [$title, $content, $author]);
-    }
-
-    private function buildObject(array $row)
+    private function buildObject($row)
     {
         $article = new Article();
         $article->setId($row['id']);
         $article->setTitle($row['title']);
         $article->setContent($row['content']);
-        $article->setDateAdded($row['date_added']);
         $article->setAuthor($row['author']);
+        $article->setCreatedAt($row['createdAt']);
         return $article;
+    }
+
+    public function getArticles()
+    {
+        $sql = 'SELECT id, title, content, author, createdAt FROM article ORDER BY id DESC';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row){
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
+    public function getArticle($articleId)
+    {
+        $sql = 'SELECT id, title, content, author, createdAt FROM article WHERE id = ?';
+        $result = $this->createQuery($sql, [$articleId]);
+        $article = $result->fetch();
+        $result->closeCursor();
+        return $this->buildObject($article);
+    }
+
+    public function addArticle(Parameter $post)
+    {
+        //Permet de récupérer les variables $title, $content et $author
+        $sql = 'INSERT INTO article (title, content, author, createdAt) VALUES (?, ?, ?, NOW())';
+        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author')]);
     }
 }

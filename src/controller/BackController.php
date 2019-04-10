@@ -2,29 +2,27 @@
 
 namespace App\src\controller;
 
-use App\src\DAO\ArticleDAO;
-use App\src\model\View;
+use App\config\Parameter;
 
-class BackController
+class BackController extends Controller
 {
-    private $view;
-
-    public function __construct()
+    public function addArticle(Parameter $post)
     {
-        $this->view = new View();
-    }
-
-    public function addArticle($post)
-    {
-        if(isset($post['submit'])) {
-            $articleDAO = new ArticleDAO();
-            $articleDAO->addArticle($post);
-            session_start();
-            $_SESSION['add_article'] = 'Le nouvel article a bien été ajouté';
+        if($post->get('submit')) {
+            $this->articleDAO->addArticle($post);
+            $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
             header('Location: ../public/index.php');
         }
-        $this->view->render('add_article', [
+        return $this->view->render('add_article', [
             'post' => $post
         ]);
     }
+
+
+    /* ************************** */
+
+
+
+
+
 }

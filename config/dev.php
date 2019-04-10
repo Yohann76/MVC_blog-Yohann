@@ -1,6 +1,6 @@
 <?php
 const HOST = 'localhost';
-const DB_NAME = 'blogmvc';
+const DB_NAME = 'blog';
 const CHARSET = 'utf8';
 
 const DB_HOST = 'mysql:host='.HOST.';dbname='.DB_NAME.';charset='.CHARSET;

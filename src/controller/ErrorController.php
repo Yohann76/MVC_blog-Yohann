@@ -2,16 +2,15 @@
 
 namespace App\src\controller;
 
-class ErrorController
+class ErrorController extends Controller
 {
-    
-    public function unknown()
+    public function errorNotFound()
     {
-        require '../templates/unknown.php';
+        return $this->view->render('error_404');
     }
 
-    public function error()
+    public function errorServer()
     {
-        require '../templates/error.php';
+        return $this->view->render('error_500');
     }
 }
