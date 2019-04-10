@@ -30,41 +30,43 @@ class Router
         try{
             if(isset($route))
             {
+                // Route pour afficher un article ( single )
                 if($route === 'article'){
                     $this->frontController->article($this->request->getGet()->get('articleId'));
                 }
-                /* route pour gerer l'affichage home */
+                // route pour gerer l'affichage home
                 elseif ($route === 'home'){
                     $this->frontController->home();
                 }
-                /* Route pour afficher la liste de blog */
+                // Route pour afficher la liste de blog
                 elseif ($route === 'displayBlog'){
                     $this->frontController->displayBlog();
                 }
+
                 /*
                 Connexion et inscription
                 ***************************
                  */
-                /* Route pour afficher la page de connexion */
+                // Route pour afficher la page de connexion
                 elseif ($route === 'connection'){
                     $this->connexionController->connection();
                 }
-                /* Route pour gerer la connexion suite au formulaire */
+                // Route pour gerer la connexion suite au formulaire
                 elseif ($route === 'connect'){
                     $this->connexionController->connect();
                 }
 
-                /* Route pour afficher la page d'inscription */
+                // Route pour afficher la page d'inscription
                 elseif ($route === 'inscription'){
                     $this->connexionController->inscription();
                 }
-                /* Route pour gerer l'inscription suite au formulaire*/
+                // Route pour gerer l'inscription suite au formulaire
                 elseif ($route === 'registration'){
                     $this->connexionController->registration($this->request->getPost());
                 }
-                /* ADMIN ROUTER */
+                // ADMIN ROUTER
 
-                /* Route pour Afficher la page admin ( add article )  */
+                // Route pour Afficher la page admin ( add article )
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
