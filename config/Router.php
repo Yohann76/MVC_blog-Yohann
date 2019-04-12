@@ -49,20 +49,23 @@ class Router
                  */
                 // Route pour afficher la page de connexion
                 elseif ($route === 'connection'){
-                    $this->connexionController->connection();
+                    $this->frontController->connection();
                 }
                 // Route pour gerer la connexion suite au formulaire
                 elseif ($route === 'connect'){
-                    $this->connexionController->connect();
+                   // var_dump($_POST);
+                    $this->connexionController->connect($this->request->getPost());
                 }
 
                 // Route pour afficher la page d'inscription
                 elseif ($route === 'inscription'){
-                    $this->connexionController->inscription();
+                    $this->frontController->inscription();
                 }
                 // Route pour gerer l'inscription suite au formulaire
                 elseif ($route === 'registration'){
+                   // var_dump($_POST);
                     $this->connexionController->registration($this->request->getPost());
+
                 }
                 // ADMIN ROUTER
 

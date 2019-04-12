@@ -109,6 +109,7 @@ header .intro-text .skills {
   text-transform: uppercase;
   font-weight: 700;
   border: none;
+
 }
 .navbar-custom a:focus {
   outline: none;

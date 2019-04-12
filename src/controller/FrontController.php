@@ -27,6 +27,19 @@ class FrontController extends Controller
         return $this->view->render('blog', [
             'articles' => $articles
         ]);
-
     }
+
+    /*  Afficher la page d'inscription */
+    public function inscription() {
+        return $this->view->render('registration', [
+
+        ]);
+    }
+
+    /* Afficher la page de connexion */
+    public function connection() {
+        return $this->view->render('connection', [
+        ]);
+    }
+
 }

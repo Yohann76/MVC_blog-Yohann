@@ -6,27 +6,20 @@ use App\config\Parameter;
 
 class ConnexionController extends Controller
 {
-
-    /* Afficher la page de connexion */
-    public function connection() {
-        return $this->view->render('connection', [
-
-        ]);
-    }
-
-    /* gérer la connexion */
-    public function connect()
+    /**
+     * @param Parameter $post
+     */
+    public function connect(Parameter $post)
     {
-        // Si un form est valide et envoyer :
-        if (isset($_POST['email']) && ($_POST['password'])) {
-            //verifier que le membre existe :
-            $result = $this->userDAO->checkBDD($_POST['email'],$_POST['password']);
-            // Si le résultat est vrai, on vérifie le role
+        // Si le form est envoyer :
+        if($post->get('submit')) {
+            // check si le membre existe
+            $result = $this->userDAO->checkBDD($post);
+            // Si un compte existe
             if ($result == true) {
-                $role = $this->userDAO->checkRole($_POST['email']);
+                $role = $this->userDAO->checkRole($post);
                 // Si il est admin :
                 if($role[0] == 'admin'){
-
                     $this->view->render('backOffice', [
                     ]);
                 }
@@ -35,37 +28,26 @@ class ConnexionController extends Controller
 
                 }
             }
-            // Si le membre n'existe pas dans la base :
-            else{
-                $this->view->render('connect', [
-                    // envoyer message erreur
+            // Si rien a été trouver
+            else if ($result == false ){
+                return $this->view->render('connection', [
                 ]);
             }
         }
-        // Si le form n'est pas valide :
-        else {
-            $this->view->render('connect', [
-            ]);
-        }
+
     }
 
-
-    /*  Afficher la page d'inscription */
-    public function inscription() {
-        return $this->view->render('registration', [
-
-        ]);
-    }
-
-    /* Gérer l'inscription */
+    /**
+     * @param Parameter $post
+     */
     public function registration(Parameter $post)
-        {
-            if($post->get('submit')) {
-                $this->userDAO->addUser($post);
-                header('Location: ../public/index.php'); /* a rediriger sur une page membre */
-            }
+    {
+        if($post->get('submit')) {
+            $this->userDAO->addUser($post);
+            header('Location: ../public/index.php'); /* a rediriger sur une page membre */
+        }
             return $this->view->render('registration', [
                 'post' => $post
             ]);
-        }
-}
+    }
+} // end class

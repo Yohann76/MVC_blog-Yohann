@@ -12,7 +12,7 @@
     <input name="lastName" type="text" id="inputEmail" class="form-control" placeholder="Prénom" required autofocus>
 
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input name="mail" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 
 
     <label for="inputPassword" class="sr-only">Password</label>

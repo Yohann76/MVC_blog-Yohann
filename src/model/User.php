@@ -5,7 +5,7 @@ namespace App\src\model;
 class User
 {
     private $id;
-    private $email ;
+    private $mail ;
     private $firstName;
     private $lastName;
     private $password;
@@ -30,12 +30,12 @@ class User
      */
     public function getEmail()
     {
-        return $this->email;
+        return $this->mail;
     }
 
-    public function setEmail($email)
+    public function setEmail($mail)
     {
-        $this->email = $email;
+        $this->mail = $mail;
     }
 
     /**
