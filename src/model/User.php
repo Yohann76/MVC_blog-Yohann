@@ -6,11 +6,10 @@ class User
 {
     private $id;
     private $mail ;
-    private $firstName;
-    private $lastName;
+    private $first_name;
+    private $last_name;
     private $password;
     private $role;
-
 
     /**
      * @return mixed
@@ -43,27 +42,25 @@ class User
      */
     public function getFirstName()
     {
-        return $this->firstName;
+        return $this->first_name;
     }
 
-
-    public function setFirstName($firstName)
+    public function setFirstName($first_name)
     {
-        $this->firstName = $firstName;
+        $this->first_name = $first_name;
     }
-
 
     /**
      * @return mixed
      */
     public function getLastName()
     {
-        return $this->lastName;
+        return $this->last_name;
     }
 
-    public function setLastName($lastName)
+    public function setLastName($last_name)
     {
-        $this->lastName = $lastName;
+        $this->last_name = $last_name;
     }
 
 

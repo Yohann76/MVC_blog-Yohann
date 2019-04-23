@@ -42,12 +42,16 @@ class Router
                 elseif ($route === 'displayBlog'){
                     $this->frontController->displayBlog();
                 }
+                // DownloadCv
+                else if($_GET['route'] === 'cv') {
+                    $this->frontController->downloadCv();
+                }
 
                 /*
                 Connexion et inscription
                 ***************************
                  */
-                // Route pour afficher la page de connexion
+                // Route pour afficher la page de connexion et inscription
                 elseif ($route === 'connection'){
                     $this->frontController->connection();
                 }
@@ -57,22 +61,33 @@ class Router
                     $this->connexionController->connect($this->request->getPost());
                 }
 
-                // Route pour afficher la page d'inscription
-                elseif ($route === 'inscription'){
-                    $this->frontController->inscription();
-                }
                 // Route pour gerer l'inscription suite au formulaire
                 elseif ($route === 'registration'){
                    // var_dump($_POST);
                     $this->connexionController->registration($this->request->getPost());
 
                 }
+                // Route pour se deconnecter
+                elseif ($route === 'Déconnexion'){
+                    $this->backController->Déconnexion();
+
+                }
+
+
+
                 // ADMIN ROUTER
 
                 // Route pour Afficher la page admin ( add article )
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
+                //
+                elseif ($route === 'removeArticle'){
+                    $this->backController->removeArticle($this->request->getPost());
+                }
+
+
+
             }
             else{
                 $this->frontController->home();

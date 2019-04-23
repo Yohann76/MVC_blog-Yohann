@@ -10,19 +10,29 @@ class BackController extends Controller
     {
         if($post->get('submit')) {
             $this->articleDAO->addArticle($post);
-            $this->session->set('add_article', 'Le nouvel article a bien été ajouté');
-            header('Location: ../public/index.php');
+            header('Location: ../public/index.php?route=connect');
         }
         return $this->view->render('add_article', [
             'post' => $post
         ]);
     }
 
+     /*  ***********************  */
+    public function removeArticle(Parameter $post)
+    {
+        $articles = $this->articleDAO->getArticles();
+        return $this->view->render('remove_article', [
+            'articles' => $articles
+        ]);
+    }
+
 
     /* ************************** */
-
-
-
+    public function Déconnexion()
+    {
+    $this->session->stop() ;
+        header('Location: ../public/index.php?route=connection');
+    }
 
 
 }

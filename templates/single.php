@@ -1,7 +1,7 @@
 <?php $this->title = "Article"; ?>
 
 <h1>Mon blog</h1>
-<p>En construction</p>
+
 <div>
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
@@ -9,6 +9,11 @@
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
 </div>
 <br>
+
+
+<!-- Formulaire pour commenter -->
+
+
 <a href="../public/index.php">Retour à l'accueil</a>
 <div id="comments" class="text-left" style="margin-left: 50px">
     <h3>Commentaires</h3>

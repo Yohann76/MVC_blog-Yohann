@@ -17,7 +17,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/cabin.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/P2chalet.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -27,7 +27,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/cake.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/SpaceinvaderDWJP5.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -37,7 +37,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/circus.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/Velo'VDWJP3.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -47,7 +47,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/game.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/APIP7.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -57,7 +57,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/safe.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/snowP6.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -67,7 +67,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/submarine.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/P8todo.png" class="img-responsive" alt="">
                 </a>
             </div>
         </div>
@@ -91,7 +91,8 @@
                 <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <a href="#" class="btn btn-lg btn-outline">
+                <a href="index.php?route=cv" class="btn btn-lg btn-outline">
+
                     <i class="fa fa-download"></i> Download CV
                 </a>
             </div>

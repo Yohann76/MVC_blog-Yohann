@@ -1,6 +1,5 @@
 <!-- Navigation -->
 
-<p> Ici information du back office </p>
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,19 +14,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
-                    <a href="#page-top"></a>
+                    <a href="#page-top"> </a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#portfolio">Gerer les commentaires</a>
+                    <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="../public/index.php?route=addArticle">ajouter un article</a>
+                    <a href="../public/index.php?route=addArticle">Ajouter un article</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Modifier un article</a>
+                    <a href="../public/index.php?route=removeArticle">Modifier un article</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#">Supprimer un article</a>
+                    <a href="../public/index.php?route=home">Retour au site</a>
                 </li>
             </ul>
         </div>
@@ -35,3 +34,9 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
+
+<h1> Bienvenue dans votre espace d'aministration <br/>
+    <?= $this->session->show('userFirst_name'); ?>  <?= $this->session->show('userLast_name'); ?> <br/> <br/> </h1>
+
+<h2> Gestion des commentaires :</h2>
+<?= $this->session->show('userMail'); ?> <br/>

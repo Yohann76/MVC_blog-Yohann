@@ -28,6 +28,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 </head>
 
 
@@ -44,6 +46,7 @@
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#page-top">Yohann Durand</a>
+           <!-- <img class="img-responsive" src="boostrap_theme/img/logo.png" alt=""> -->
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,10 +59,10 @@
                     <a href="../public/index.php?route=home">portfolio</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#about">A propos</a>
+                    <a href="../public/index.php#about">A propos</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="#contact">Contact</a>
+                    <a href="../public/index.php#contact">Contact</a>
                 </li>
                 <li class="page-scroll">
                     <a href="../public/index.php?route=displayBlog">Blog</a>
@@ -76,9 +79,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <img class="img-responsive" src="boostrap_theme/img/profile.png" alt="">
+                <img class="img-responsive" src="boostrap_theme/img/profile1.png" alt="">
                 <div class="intro-text">
                     <span class="name">Yohann Durand</span>
+
                     <hr class="star-light">
                     <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
                 </div>
@@ -98,9 +102,22 @@
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Se connecter</h3>
-                    <a href="../public/index.php?route=inscription">Inscription</a>
-                    <br/>
-                    <a href="../public/index.php?route=connection">Connection</a>
+                    <?php  if ($_SESSION['user'] == 'admin'){ ?>
+                        <a href="../public/index.php?route=connection">Ma page admin</a> <br/>
+                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
+                    <?php  }
+
+                    else if ($_SESSION['user'] == 'membre'){ ?>
+                        <a href="../public/index.php?route=connection">Ma page membre</a> <br/>
+                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
+
+                    <?php }
+
+                    else { ?>
+                        <a href="../public/index.php?route=connection">Connection</a>
+                    <?php }?>
+
+
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
