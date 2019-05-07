@@ -5,6 +5,7 @@ use App\src\controller\BackController;
 use App\src\controller\ErrorController;
 use App\src\controller\FrontController;
 use App\src\controller\ConnexionController;
+use App\src\controller\MailController;
 use Exception;
 
 class Router
@@ -13,6 +14,7 @@ class Router
     private $errorController;
     private $backController;
     private $connexionController;
+    private $mailController ;
     private $request;
 
     public function __construct()
@@ -22,6 +24,7 @@ class Router
         $this->backController = new BackController();
         $this->errorController = new ErrorController();
         $this->connexionController = new ConnexionController();
+        $this->mailController = new MailController() ;
     }
 
     public function run()
@@ -65,25 +68,68 @@ class Router
                 elseif ($route === 'registration'){
                    // var_dump($_POST);
                     $this->connexionController->registration($this->request->getPost());
-
                 }
                 // Route pour se deconnecter
                 elseif ($route === 'Déconnexion'){
                     $this->backController->Déconnexion();
-
+                }
+                // Route pour Afficher la page admin
+                elseif ($route === 'displayAdmin'){
+                    $this->connexionController->displayAdmin();
                 }
 
-
+                // Mail
+                elseif ($route === 'sendMail'){
+                    $this->mailController->transport($this->request->getPost() );
+                }
 
                 // ADMIN ROUTER
 
-                // Route pour Afficher la page admin ( add article )
+                // Route pour Afficher la gestion d'article
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
-                //
+                // Ajouter un commentaire
+                else if($_GET['route'] === 'addComment') {
+                    $this->backController->addComment($this->request->getPost() );
+                }
+                // Modification d'article avec le parametre de L'url
                 elseif ($route === 'removeArticle'){
-                    $this->backController->removeArticle($this->request->getPost());
+                    $this->backController->removeArticle($this->request->getGet()->get('articleId'));
+                }
+                elseif ($route === 'mooveArticle'){
+                    $this->backController->mooveArticle($this->request->getPost());
+                }
+                // Suppression d'article avec le parametre de L'url
+                elseif ($route === 'deleteArticle'){
+                    $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
+                }
+
+                // Gestion des commentaires
+                elseif ($route === 'comment'){
+                    $this->backController->comment($this->request->getPost());
+                }
+                //  Vérifier un commentaire
+                elseif ($route === 'verifiedComment'){
+                    $this->backController->verifiedComment($this->request->getGet()->get('commentId'));
+                }
+                // Supprimer un commentaire
+                elseif ($route === 'deleteComment'){
+                    $this->backController->deleteComment($this->request->getGet()->get('commentId'));
+                }
+
+
+                // Gestion des droits
+                elseif ($route === 'rights'){
+                    $this->backController->rights($this->request->getPost());
+                }
+                //  Declassement d'un administrateur
+                elseif ($route === 'adminChangeUser'){
+                    $this->backController->adminChangeUser($this->request->getGet()->get('userId'));
+                }
+                //  Mise a niveau d'un membre
+                elseif ($route === 'userChangeAdmin'){
+                    $this->backController->userChangeAdmin($this->request->getGet()->get('userId'));
                 }
 
 
@@ -98,4 +144,6 @@ class Router
             $this->errorController->errorServer();
         }
     }
+
+
 }

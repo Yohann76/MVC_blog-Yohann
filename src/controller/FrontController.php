@@ -12,10 +12,12 @@ class FrontController extends Controller
         ]);
     }
 
+    // Transmettre la session name
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
         $comments = $this->commentDAO->getCommentsFromArticle($articleId);
+
         return $this->view->render('single', [
             'article' => $article,
             'comments' => $comments
@@ -37,11 +39,13 @@ class FrontController extends Controller
     // Download CV
     public function downloadCv()
     {
-        $file_name ="cv.txt";
+        $file_name ="CV.pdf";
         header("Content-Disposition: attachment; filename=\"$file_name\"");
     }
 
-    // Fonction de contact
+
+
+
 
 
 

@@ -8,7 +8,7 @@
 
   "require": {
     "twbs/bootstrap": "3.3.7",
-    "twig/twig": "2.0"
+    "twig/twig": "2.0",
+    "swiftmailer/swiftmailer": "^6.2"
   }
 }
-

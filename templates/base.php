@@ -102,20 +102,22 @@
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Se connecter</h3>
-                    <?php  if ($_SESSION['user'] == 'admin'){ ?>
-                        <a href="../public/index.php?route=connection">Ma page admin</a> <br/>
-                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
-                    <?php  }
+                    <?php if (isset($_SESSION['user']) &&  ($_SESSION['user']) == 'admin' )  { ?>
+                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a><br/>
+                        <a href="../public/index.php?route=displayAdmin">page Admin</a>
+                    <?php }
 
-                    else if ($_SESSION['user'] == 'membre'){ ?>
-                        <a href="../public/index.php?route=connection">Ma page membre</a> <br/>
+                    else if (isset($_SESSION['user']) &&  ($_SESSION['user']) == 'membre' ){ ?>
                         <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
-
                     <?php }
 
                     else { ?>
                         <a href="../public/index.php?route=connection">Connection</a>
                     <?php }?>
+
+
+
+
 
 
                 </div>

@@ -2,9 +2,6 @@
 
 <h2> Blog </h2>
 
-
-
-
 <!-- -------- -->
 <?php
 foreach ($articles as $article)

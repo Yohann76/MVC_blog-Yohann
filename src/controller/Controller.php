@@ -8,6 +8,7 @@ use App\src\DAO\CommentDAO;
 use App\src\DAO\UserDAO;
 use App\src\model\View;
 
+
 abstract class Controller
 {
     protected $articleDAO;
@@ -18,6 +19,7 @@ abstract class Controller
     protected $get;
     protected $post;
     protected $session;
+   
 
 
     public function __construct()

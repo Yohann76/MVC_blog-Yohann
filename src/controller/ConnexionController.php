@@ -11,7 +11,6 @@ class ConnexionController extends Controller
      */
     public function connect(Parameter $post)
     {
-
         // Si le form de connection est envoyer :
         if($post->get('submit')) {
             $this->userDAO->getHash($post->get('mail'));
@@ -24,19 +23,17 @@ class ConnexionController extends Controller
                 $this->session->set('userFirst_name', $result->getFirstName() ) ;
                 $this->session->set('userLast_name', $result->getLastName() ) ;
                 $this->session->set('userMail', $result->getEmail() ) ;
+                $this->session->set('userId', $result->getId() ) ;
 
                 // Si il est admin :
                 if($role[0] == 'admin'){
                     $this->session->set('user', 'admin' ) ;
-                    $this->view->render('backOffice', [
-                    ]);
+                    header('Location: ../public/index.php?route=displayAdmin'); /* a rediriger sur une page membre */
 
                 }
-
                 // Si il est membre :
                 else if($role[0] == 'membre'){
                     $this->session->set('user', 'membre' ) ;
-                    // a mettre dans la session
                     return $this->view->render('members', [
                     ]);
                 }
@@ -47,21 +44,6 @@ class ConnexionController extends Controller
                 ]);
             }
         }
-//////////////////////
-        // Si le form est pas envoyer on vérifie la session
-        /*
-        if ( $_SESSION['user'] = 'admin' )  {
-            $this->view->render('backOffice', [
-
-            ]);
-        }
-        else if ( $_SESSION['user'] = 'membre' ) {
-            $this->view->render('members', [
-
-            ]);
-        }
-        */
-//////////////////////
     }
 
     /**
@@ -77,4 +59,32 @@ class ConnexionController extends Controller
                 'post' => $post
             ]);
     }
+    // Display page Admin
+    public function displayAdmin()
+    {
+         $nbrArticle = $this->userDAO->nbrArticle();
+         $numberArticle = $nbrArticle[0] ;
+
+         $nbrCommentVerified = $this->userDAO->nbrCommentVerified();
+         $numberCommentVerified = $nbrCommentVerified[0] ;
+
+         $nbrCommentNotVerified = $this->userDAO->nbrCommentNotVerified();
+         $numberCommentNotVerified = $nbrCommentNotVerified[0] ;
+
+         $nbrMembers =  $this->userDAO->nbrMembers();
+         $numberMembers = $nbrMembers[0] ;
+
+         $nbrAdmin = $this->userDAO->nbrAdmin();
+         $numberAdmin = $nbrAdmin[0] ;
+
+        return $this->view->render('backoffice', [
+            'numberArticle' => $numberArticle,
+            'numberCommentVerified' => $numberCommentVerified,
+            'numberCommentNotVerified' => $numberCommentNotVerified,
+            'numberMembers' => $numberMembers,
+            'numberAdmin' => $numberAdmin
+        ]);
+    }
+
+
 } // end class

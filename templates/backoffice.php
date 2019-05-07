@@ -20,10 +20,13 @@
                     <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="../public/index.php?route=addArticle">Ajouter un article</a>
+                    <a href="../public/index.php?route=addArticle">Articles</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="../public/index.php?route=removeArticle">Modifier un article</a>
+                    <a href="../public/index.php?route=comment">Commentaires</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="../public/index.php?route=rights">Droit</a>
                 </li>
                 <li class="page-scroll">
                     <a href="../public/index.php?route=home">Retour au site</a>
@@ -36,7 +39,22 @@
 </nav>
 
 <h1> Bienvenue dans votre espace d'aministration <br/>
-    <?= $this->session->show('userFirst_name'); ?>  <?= $this->session->show('userLast_name'); ?> <br/> <br/> </h1>
+    <?= $this->session->get('userFirst_name'); ?>  <?= $this->session->get('userLast_name'); ?> <br/> <br/> </h1>
 
-<h2> Gestion des commentaires :</h2>
-<?= $this->session->show('userMail'); ?> <br/>
+<h2> Les stats de votre site :</h2>
+<br/>
+<br/>
+
+<h3> nombre de d'article : <?= htmlspecialchars($numberArticle);?>  </h3>
+<h3> nombre de commentaire Vérifier : <?= htmlspecialchars($numberCommentVerified);?> </h3>
+<h3> nombre de commentaire en attente : <?= htmlspecialchars($numberCommentNotVerified);?> </h3>
+<h3> nombre de membre : <?= htmlspecialchars($numberMembers);?> </h3>
+<h3> nombre d'administrateur : <?= htmlspecialchars($numberAdmin);?>  </h3>
+
+
+
+
+
+
+
+

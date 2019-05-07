@@ -18,7 +18,7 @@ class CommentDAO extends DAO
 
     public function getCommentsFromArticle($articleId)
     {
-        $sql = 'SELECT id, pseudo, content, createdAt FROM comment WHERE article_id = ? ORDER BY createdAt DESC';
+        $sql = 'SELECT id, pseudo, content, createdAt FROM comment WHERE article_id = ? AND verified = "true"  ORDER BY createdAt DESC';
         $result = $this->createQuery($sql, [$articleId]);
         $comments = [];
         foreach ($result as $row) {
@@ -27,5 +27,61 @@ class CommentDAO extends DAO
         }
         $result->closeCursor();
         return $comments;
+    }
+    // Suppression des commentaire lié a l'article
+    public function deleteCommentFromArticle($articleId)
+    {
+
+        $sql = 'DELETE FROM comment WHERE article_id = ?';
+        $this->createQuery($sql, [$articleId]   );
+    }
+
+
+    // Ajouter un commentaire
+    public function addComment($post)
+    {
+        $sql = 'INSERT INTO comment (pseudo,content,article_id,users_id,createdAt) VALUES (?, ?, ?, ? , NOW() )';
+        $this->createQuery($sql,[ $post->get('pseudo'), $post->get('content') ,$post->get('article_id') ,$post->get('users_id') ]  );
+    }
+
+
+    public function getListCommentNotVerified()
+    {
+
+        $sql = 'SELECT * FROM comment WHERE verified = "false" ';
+        $result = $this->createQuery($sql);
+
+        $listCommentNotVerified = [];
+        foreach ($result as $row){
+            $listCommentNotVerifiedId = $row['id'];
+            $listCommentNotVerified[$listCommentNotVerifiedId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $listCommentNotVerified;
+    }
+
+    public function getListCommentVerified()
+    {
+        $sql = 'SELECT * FROM comment WHERE verified = "true" ';
+        $result = $this->createQuery($sql);
+
+        $listCommentVerified = [];
+        foreach ($result as $row){
+            $listCommentVerifiedId = $row['id'];
+            $listCommentVerified[$listCommentVerifiedId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $listCommentVerified;
+
+    }
+
+    public function verifiedComment($post){
+       $sql = 'UPDATE comment SET verified = "true"  WHERE id=?;';
+        $this->createQuery($sql, [$post]   );
+    }
+
+    public function deleteComment($post){
+        $sql = 'DELETE FROM comment WHERE id = ?';
+        $this->createQuery($sql, [$post]   );
     }
 }
