@@ -19,6 +19,8 @@ class MailController extends Controller
         var_dump( $subject) ;
         var_dump(EMAIL_HOST, EMAIL_PORT) ;
         var_dump(EMAIL_ENCRYPTION) ;
+        var_dump(EMAIL_USERNAME) ;
+        var_dump(EMAIL_PASSWORD);
 
         $transport = (new \Swift_SmtpTransport(EMAIL_HOST, EMAIL_PORT))
             ->setUsername(EMAIL_USERNAME)

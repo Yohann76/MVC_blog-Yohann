@@ -15,12 +15,13 @@ class ArticleDAO extends DAO
         $article->setContent($row['content']);
         $article->setAuthor($row['author']);
         $article->setCreatedAt($row['createdAt']);
+        $article->setChapo($row['chapo']);
         return $article;
     }
 
     public function getArticles()
     {
-        $sql = 'SELECT id, title, content, author, createdAt FROM article ORDER BY id DESC';
+        $sql = 'SELECT id, title, content, author, createdAt, chapo FROM article ORDER BY id DESC';
         $result = $this->createQuery($sql);
         $articles = [];
         foreach ($result as $row){
@@ -33,7 +34,7 @@ class ArticleDAO extends DAO
 
     public function getArticle($articleId)
     {
-        $sql = 'SELECT id, title, content, author, createdAt FROM article WHERE id = ?';
+        $sql = 'SELECT id, title, content, author, createdAt,chapo FROM article WHERE id = ?';
         $result = $this->createQuery($sql, [$articleId]);
         $article = $result->fetch();
         $result->closeCursor();
@@ -43,8 +44,8 @@ class ArticleDAO extends DAO
     public function addArticle(Parameter $post)
     {
         //Permet de récupérer les variables $title, $content et $author
-        $sql = 'INSERT INTO article (title, content, author, createdAt) VALUES (?, ?, ?, NOW())';
-        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author')]);
+        $sql = 'INSERT INTO article (title, content, author,chapo,createdAt) VALUES (?, ?, ?, ?,NOW())';
+        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author'),$post->get('chapo')]);
     }
 
 
@@ -57,8 +58,8 @@ class ArticleDAO extends DAO
 
     public function mooveArticle($post)
     {
-        $sql = 'UPDATE article SET title = ?, content = ?, author = ?, createdAt = NOW() WHERE id=?;';
-        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author'),$post->get('id') ]);
+        $sql = 'UPDATE article SET title = ?, content = ?, author = ?, chapo = ?, createdAt = NOW() WHERE id=?;';
+        $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author'),$post->get('chapo'),$post->get('id') ]);
 
 
     }

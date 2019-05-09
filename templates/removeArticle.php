@@ -53,6 +53,10 @@
         <label for="content">Contenu</label>      <br>
         <textarea  id="content" name="content"><?= htmlspecialchars($article->getContent());?></textarea>    <br>
 
+
+        <label for="content">Chapo</label>      <br>
+        <textarea  id="chapo" name="chapo"><?= htmlspecialchars($article->getChapo());?></textarea>    <br>
+
         <label for="author">Auteur</label><br>
         <input value="<?= htmlspecialchars($article->getAuthor());?>" type="text" id="author" name="author">      <br>
 

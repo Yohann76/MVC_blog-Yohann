@@ -3,7 +3,7 @@
     <form class="form-signin" method="post" action="../public/index.php?route=connect">
 
 
-        <img class="mb-4" src="yohann_logo" alt="" width="72" height="72">
+        <img class="mb-4" src="boostrap_theme/img/logo.png" alt="" width="72" height="72">
 
         <h1 class="h3 mb-3 font-weight-normal">Veuillez vous connecter</h1>
 
@@ -34,7 +34,7 @@
     <!-- Registration -->
     <form class="form-signin" method="post" action="../public/index.php?route=registration">
 
-        <img class="mb-4" src="yohann_logo" alt="" width="72" height="72">
+        <img class="mb-4" src="boostrap_theme/img/logo.png" alt="" width="72" height="72">
 
         <h1 class="h3 mb-3 font-weight-normal">Veuillez vous Inscrire</h1>
 

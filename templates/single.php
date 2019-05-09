@@ -6,6 +6,7 @@
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>
     <p><?= htmlspecialchars($article->getAuthor());?></p>
+    <p><?= htmlspecialchars($article->getChapo());?></p>
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
 </div>
 <br>
@@ -35,10 +36,6 @@
 
 </div>
 
-
-
-
-<!-- Faire en sorte d'etre connecter -->
 
 <!-- Si une session est défini on propose de commenter : -->
 

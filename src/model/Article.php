@@ -9,6 +9,24 @@ class Article
     private $content;
     private $author;
     private $createdAt;
+    private $chapo ;
+
+    /**
+     * @return mixed
+     */
+    public function getChapo()
+    {
+        return $this->chapo;
+    }
+
+    /**
+     * @param mixed $chapo
+     */
+    public function setChapo($chapo)
+    {
+        $this->chapo = $chapo;
+    }
+
 
     public function getId()
     {

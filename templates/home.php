@@ -17,7 +17,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/P2chalet.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/P2chalet.PNG" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -27,7 +27,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/SpaceinvaderDWJP5.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/SpaceinvaderDWJP5.PNG" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -37,7 +37,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/Velo'VDWJP3.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/Velo'VDWJP3.PNG" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -57,7 +57,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="boostrap_theme/img/portfolio/snowP6.png" class="img-responsive" alt="">
+                    <img src="boostrap_theme/img/portfolio/SnowP6.png" class="img-responsive" alt="">
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
