@@ -13,6 +13,6 @@ const DB_PASS = ''; // Database password
 const EMAIL_HOST ='smtp.gmail.com';
 const EMAIL_PORT =587; // 587
 
-const EMAIL_USERNAME =''; // Your email
+const EMAIL_USERNAME ='yohanndurand76@gmail.com'; // Your email
 const EMAIL_PASSWORD =''; // Your password
 const EMAIL_ENCRYPTION ='tls'; //For Gmail

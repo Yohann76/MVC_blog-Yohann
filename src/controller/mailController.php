@@ -16,28 +16,24 @@ class MailController extends Controller
         $subject = $post->get('subject') ;
         $body = $post->get('message') ;
 
-        var_dump( $subject) ;
-        var_dump(EMAIL_HOST, EMAIL_PORT) ;
-        var_dump(EMAIL_ENCRYPTION) ;
-        var_dump(EMAIL_USERNAME) ;
-        var_dump(EMAIL_PASSWORD);
+        // Create the Transport
+        $https['ssl']['verify_peer'] = FALSE;
+        $https['ssl']['verify_peer_name'] = FALSE; // seems to work fine without this line so far
 
         $transport = (new \Swift_SmtpTransport(EMAIL_HOST, EMAIL_PORT))
             ->setUsername(EMAIL_USERNAME)
             ->setPassword(EMAIL_PASSWORD)
             ->setEncryption(EMAIL_ENCRYPTION) //For Gmail
+            ->setStreamOptions($https)
         ;
         $mailer = new \Swift_Mailer($transport);
+
         // Create a message
         $message = (new \Swift_Message($subject))
             ->setFrom([$fromEmail => $fromUser])
             ->setTo([EMAIL_USERNAME])
             ->setBody($body)
         ;
-
-        // test
-        $this->SMTPDebug = 2;
-        $this->SMTPAutoTLS = false;
 
         // Send the message
         $result = $mailer->send($message);
