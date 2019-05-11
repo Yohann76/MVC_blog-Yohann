@@ -29,10 +29,7 @@ class BackController extends Controller
     // Add Comment
     public function addComment(Parameter $post)
     {
-
         $this->commentDAO->addComment($post);
-
-        // Prendre exemple sur add article pour voir la redirection
         header('Location: ../public/index.php?route=displayBlog');
     }
 

@@ -65,11 +65,11 @@
             <th scope="row">   <?= htmlspecialchars($listCommentNotVerified->getContent());?>  </th>
             <td><?= htmlspecialchars($listCommentNotVerified->getPseudo());?></td>
             <td>  <a href="../public/index.php?route=verifiedComment&commentId=<?php echo htmlspecialchars($listCommentNotVerified->getId());?>" >
-                    <button type="button" class="btn btn-outline-success">Vérifié</button></a></td>
+                    <button type="button"  id="verifiedComment"  class="btn btn-outline-success">Vérifié</button></a></td>
 
 
             <td>  <a href="../public/index.php?route=deleteComment&commentId=<?php echo htmlspecialchars($listCommentNotVerified->getId());?>" >
-                    <button type="button" class="btn btn-outline-danger">Supprimer</button></a></td>
+                    <button type="button" id="deleteComment"  class="btn btn-outline-danger">Supprimer</button></a></td>
 
             <td> <?= htmlspecialchars($listCommentNotVerified->getCreatedAt());?></td>
         </tr>
@@ -105,7 +105,7 @@
             <th scope="row">   <?= htmlspecialchars($listCommentVerified->getContent());?>  </th>
             <td><?= htmlspecialchars($listCommentVerified->getPseudo());?></td>
             <td>  <a href="../public/index.php?route=deleteComment&commentId=<?php echo htmlspecialchars($listCommentVerified->getId());?>" >
-                    <button type="button" class="btn btn-outline-danger">Supprimer</button></a></td>
+                    <button type="button" id="deleteComment" class="btn btn-outline-danger">Supprimer</button></a></td>
 
             <td> <?= htmlspecialchars($listCommentVerified->getCreatedAt());?></td>
         </tr>

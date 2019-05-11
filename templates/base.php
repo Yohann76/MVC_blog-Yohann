@@ -29,6 +29,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- add Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
 
@@ -169,12 +171,16 @@
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+
 <!-- Contact Form JavaScript -->
 <script src="boostrap_theme/js/jqBootstrapValidation.js"></script>
 <script src="boostrap_theme/js/contact_me.js"></script>
 
 <!-- Theme JavaScript -->
 <script src="boostrap_theme/js/freelancer.min.js"></script>
+
+<!-- Sweet alert  Script-->
+<script src="boostrap_theme/js/sweetAlert.js"></script>
 
 <!-- ------------------- -->
 

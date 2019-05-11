@@ -62,7 +62,7 @@
 
         <input type="hidden" name="id" id="" value=" <?= htmlspecialchars($article->getId());?>  "  />
 
-        <input type="submit" value="Envoyer" id="submit" class="btn btn-outline-success" name="submit">
+        <input type="submit" value="Envoyer" id="submitMooveArt" class="btn btn-outline-success" name="submit">
     </form>
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>

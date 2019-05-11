@@ -38,7 +38,7 @@
     <!-- /.container-fluid -->
 </nav>
 
-<?php $this->title = "Nouvel article"; ?>
+<?php $this->title = "Droits"; ?>
 <h1>Gestion des droits </h1>
 
 <h2>Administrateurs </h2>
@@ -62,7 +62,7 @@
             <td><?= htmlspecialchars($admin->getLastName());?></td>
             <td><?= htmlspecialchars($admin->getEmail());?></td>
             <td>
-                <a href="../public/index.php?route=adminChangeUser&userId=<?php echo htmlspecialchars($admin->getId());?>" >  <button type="button" class="btn btn-outline-danger">Utilisateur</button></a>
+                <a href="../public/index.php?route=adminChangeUser&userId=<?php echo htmlspecialchars($admin->getId());?>" >  <button type="button"  id="user" class="btn btn-outline-danger">Utilisateur</button></a>
             </td>
             <th><?= htmlspecialchars($admin->getRole());?> </th>
         </tr>
@@ -95,7 +95,7 @@
             <td><?= htmlspecialchars($members->getLastName());?></td>
             <td><?= htmlspecialchars($members->getEmail());?></td>
             <td>
-                <a href="../public/index.php?route=userChangeAdmin&userId=<?php echo htmlspecialchars($members->getId());?>" >  <button type="button" class="btn btn-outline-danger">Administrateur</button></a>
+                <a href="../public/index.php?route=userChangeAdmin&userId=<?php echo htmlspecialchars($members->getId());?>" >  <button type="button"  id="admin" class="btn btn-outline-danger">Administrateur</button></a>
             </td>
             <th><?= htmlspecialchars($members->getRole());?> </th>
         </tr>

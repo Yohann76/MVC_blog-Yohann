@@ -55,7 +55,7 @@
         <label for="author">Auteur</label><br>
         <input type="text" id="author" name="author"><br>
 
-        <input type="submit" value="Envoyer" id="submit" class="btn btn-outline-success" name="submit">
+        <input type="submit" value="Envoyer" id="submitAddArticle" class="btn btn-outline-success" name="submit">
     </form>
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>
@@ -84,10 +84,10 @@
             <th scope="row"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></th>
             <td><?= htmlspecialchars($article->getAuthor());?></td>
             <td>
-                <a href="../public/index.php?route=removeArticle&articleId=<?php echo htmlspecialchars($article->getId());?>" >  <button type="button" class="btn btn-outline-warning">Modifier</button></a>
+                <a  href="../public/index.php?route=removeArticle&articleId=<?php echo htmlspecialchars($article->getId());?>" >  <button type="button"   class="btn btn-outline-warning">Modifier</button></a>
             </td>
             <td>
-                <a href="../public/index.php?route=deleteArticle&articleId=<?php echo htmlspecialchars($article->getId());?>" >  <button type="button" class="btn btn-outline-danger">Supprimer</button></a>
+                <a href="../public/index.php?route=deleteArticle&articleId=<?php echo htmlspecialchars($article->getId());?>" >  <button type="button" id="deleteArt" class="btn btn-outline-danger">Supprimer</button></a>
             </td>
 
             <td> <?= htmlspecialchars($article->getCreatedAt());?></td>
