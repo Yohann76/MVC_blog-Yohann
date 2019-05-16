@@ -12,7 +12,7 @@ class FrontController extends Controller
         ]);
     }
 
-    // Transmettre la session name
+
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
@@ -31,7 +31,6 @@ class FrontController extends Controller
         ]);
     }
 
-    /* Afficher la page de connexion */
     public function connection() {
         return $this->view->render('connection', [
         ]);
@@ -39,14 +38,21 @@ class FrontController extends Controller
     // Download CV
     public function downloadCv()
     {
-        $file_name ="CV.pdf";
+        $file_name ="../public/cv.pdf";
         header("Content-Disposition: attachment; filename=\"$file_name\"");
+
+
     }
 
 
 
 
 
+    public function Déconnexion()
+    {
+        $this->session->stop() ;
+        header('Location: ../public/index.php?route=connection');
+    }
 
 
 }

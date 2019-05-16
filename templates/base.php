@@ -13,7 +13,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- mobile for boostrap -->
-
+    <!-- add Font-awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Theme CSS -->
     <link href="boostrap_theme/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
@@ -86,7 +88,9 @@
                     <span class="name">Yohann Durand</span>
 
                     <hr class="star-light">
-                    <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                    <span class="skills">Web Developer - Back-end -  Le développeur qu’il vous faut !</span>
+                    <!-- Logo -->
+                    <img class="" src="boostrap_theme/img/logo.png" alt="">
                 </div>
             </div>
         </div>
@@ -104,12 +108,12 @@
             <div class="row">
                 <div class="footer-col col-md-4">
                     <h3>Se connecter</h3>
-                    <?php if (isset($_SESSION['user']) &&  ($_SESSION['user']) == 'admin' )  { ?>
+                    <?php if ($this->session->get('user')&&  $this->session->get('user') == 'admin' )  { ?>
                         <a href="../public/index.php?route=Déconnexion">Déconnexion</a><br/>
                         <a href="../public/index.php?route=displayAdmin">page Admin</a>
                     <?php }
 
-                    else if (isset($_SESSION['user']) &&  ($_SESSION['user']) == 'membre' ){ ?>
+                    else if ($this->session->get('user') &&  $this->session->get('user') == 'membre' ){ ?>
                         <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
                     <?php }
 
@@ -119,28 +123,28 @@
 
 
 
-
-
-
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>Around the Web</h3>
                     <ul class="list-inline">
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            <a href="https://github.com/Yohann76"
+                               class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            <a href="https://www.linkedin.com/in/yohann-durand-a20b7714a/"
+                               class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/yohann.durand.14"
+                               class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            <a href="https://twitter.com/yohann_durand"
+                               class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                         </li>
-                        <li>
-                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                        </li>
+
+
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">

@@ -15,7 +15,8 @@ foreach ($articles as $article)
         <p><?= htmlspecialchars($article->getAuthor());?></p>
         <p><?= htmlspecialchars($article->getChapo());?></p>
         <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
-        <p><a  class="btn btn-info btn-lg" role="button">En savoir plus  <span class="glyphicon glyphicon glyphicon-hand-right"></span></a></p>
+        <p><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"
+               role="button">En savoir plus  <span class="glyphicon glyphicon glyphicon-hand-right"></span></a></p>
     </div>
 </div>
     <?php

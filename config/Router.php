@@ -49,7 +49,6 @@ class Router
                 else if($_GET['route'] === 'cv') {
                     $this->frontController->downloadCv();
                 }
-
                 /*
                 Connexion et inscription
                 ***************************
@@ -63,7 +62,6 @@ class Router
                    // var_dump($_POST);
                     $this->connexionController->connect($this->request->getPost());
                 }
-
                 // Route pour gerer l'inscription suite au formulaire
                 elseif ($route === 'registration'){
                    // var_dump($_POST);
@@ -71,11 +69,7 @@ class Router
                 }
                 // Route pour se deconnecter
                 elseif ($route === 'Déconnexion'){
-                    $this->backController->Déconnexion();
-                }
-                // Route pour Afficher la page admin
-                elseif ($route === 'displayAdmin'){
-                    $this->connexionController->displayAdmin();
+                    $this->frontController->Déconnexion();
                 }
 
                 // Mail
@@ -83,9 +77,8 @@ class Router
                     $this->mailController->transport($this->request->getPost() );
                 }
 
-                // ADMIN ROUTER
-
-                // Route pour Afficher la gestion d'article
+                // ADMIN ROUTER PROTEGER
+                // Afficher la gestion d'article
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());
                 }
@@ -104,7 +97,6 @@ class Router
                 elseif ($route === 'deleteArticle'){
                     $this->backController->deleteArticle($this->request->getGet()->get('articleId'));
                 }
-
                 // Gestion des commentaires
                 elseif ($route === 'comment'){
                     $this->backController->comment($this->request->getPost());
@@ -117,8 +109,6 @@ class Router
                 elseif ($route === 'deleteComment'){
                     $this->backController->deleteComment($this->request->getGet()->get('commentId'));
                 }
-
-
                 // Gestion des droits
                 elseif ($route === 'rights'){
                     $this->backController->rights($this->request->getPost());
@@ -128,12 +118,13 @@ class Router
                     $this->backController->adminChangeUser($this->request->getGet()->get('userId'));
                 }
                 //  Mise a niveau d'un membre
-                elseif ($route === 'userChangeAdmin'){
+                elseif ($route === 'userChangeAdmin') {
                     $this->backController->userChangeAdmin($this->request->getGet()->get('userId'));
                 }
-
-
-
+                // Route pour Afficher la page admin
+                elseif ($route === 'displayAdmin'){
+                    $this->backController->displayAdmin();
+                }
             }
             else{
                 $this->frontController->home();

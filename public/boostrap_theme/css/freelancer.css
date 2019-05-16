@@ -34,6 +34,21 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
+
+/* Stats Admin */
+.container .row .col-sm-4 {
+  text-align: center ;
+}
+
+
+.icon-stats {
+  color : forestgreen;
+  font-size: 90px ;
+}
+h2 :hover {
+  text-decoration: none
+}
+
 hr.star-light,
 hr.star-primary {
   padding: 0;
@@ -112,7 +127,7 @@ header .intro-text .skills {
   text-transform: uppercase;
   font-weight: 700;
   border: none;
- /*  display: none; /* Test Unit */
+  /* display: none; /* Test Unit */
 
 
 

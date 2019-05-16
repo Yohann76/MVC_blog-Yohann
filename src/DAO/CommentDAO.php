@@ -28,10 +28,9 @@ class CommentDAO extends DAO
         $result->closeCursor();
         return $comments;
     }
-    // Suppression des commentaire lié a l'article
+    // Suppression des commentaires lié a l'article
     public function deleteCommentFromArticle($articleId)
     {
-
         $sql = 'DELETE FROM comment WHERE article_id = ?';
         $this->createQuery($sql, [$articleId]   );
     }
@@ -47,7 +46,6 @@ class CommentDAO extends DAO
 
     public function getListCommentNotVerified()
     {
-
         $sql = 'SELECT * FROM comment WHERE verified = "false" ';
         $result = $this->createQuery($sql);
 
@@ -77,7 +75,7 @@ class CommentDAO extends DAO
 
     public function verifiedComment($post){
        $sql = 'UPDATE comment SET verified = "true"  WHERE id=?;';
-        $this->createQuery($sql, [$post]   );
+       $this->createQuery($sql, [$post]   );
     }
 
     public function deleteComment($post){

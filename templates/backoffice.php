@@ -42,19 +42,92 @@
     <?= $this->session->get('userFirst_name'); ?>  <?= $this->session->get('userLast_name'); ?> <br/> <br/> </h1>
 
 <h2> Les stats de votre site :</h2>
+
 <br/>
 <br/>
 
-<h3> nombre de d'article : <?= htmlspecialchars($numberArticle);?>  </h3>
-<h3> nombre de commentaire Vérifier : <?= htmlspecialchars($numberCommentVerified);?> </h3>
-<h3> nombre de commentaire en attente : <?= htmlspecialchars($numberCommentNotVerified);?> </h3>
-<h3> nombre de membre : <?= htmlspecialchars($numberMembers);?> </h3>
-<h3> nombre d'administrateur : <?= htmlspecialchars($numberAdmin);?>  </h3>
+
+
+<br/>
+
+<div class="container">
+    <section class="row">
+        <div class="col-sm-4">
+
+            <div class="icon-stats">  <i class="fas fa-scroll"></i>   </div>
+                <div class="card-body">
+                    <h5 class="card-title">Nombre d'article</h5>
+                    <p class="card-text"><?= htmlspecialchars($numberArticle);?> </p>
+                    <a href="../public/index.php?route=addArticle"
+                    class="btn btn-primary">Voir la listes</a>
+                </div>
+
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="icon-stats"><i class="fas fa-chalkboard-teacher"></i> </div>
+                <div class="card-body">
+                    <h5 class="card-title">Commentaire vérifié</h5>
+                    <p class="card-text"><?= htmlspecialchars($numberCommentVerified);?></p>
+                    <a href="../public/index.php?route=comment"
+                       class="btn btn-primary">Voir la listes</a>
+                </div>
+
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="icon-stats">  <i class="fas fa-chalkboard"></i>   </div>
+                <div class="card-body">
+                    <h5 class="card-title">Commentaire en attente</h5>
+                    <p class="card-text"><?= htmlspecialchars($numberCommentNotVerified);?></p>
+                    <a href="../public/index.php?route=comment"
+                       class="btn btn-primary">Voir la listes</a>
+                </div>
+
+
+        </div>
+
+
+    </section>
+
+    <section class="row">
+
+
+        <div class="col-sm-4">
+
+            <div class="icon-stats">  <i class="far fa-user"></i>  </div>
+                <div class="card-body">
+                    <h5 class="card-title">NOMBRE DE MEMBRE</h5>
+                    <p class="card-text"><?= htmlspecialchars($numberMembers);?></p>
+                    <a href="../public/index.php?route=rights"
+                       class="btn btn-primary">Voir la listes</a>
+
+                </div>
+        </div>
+
+
+            <div class="col-sm-4">
+
+                <div class="icon-stats">  <i class="fas fa-user"></i>  </div>
+                    <div class="card-body">
+                        <h5 class="card-title">NOMBRE D'ADMINISTRATEUR</h5>
+                        <p class="card-text"><?= htmlspecialchars($numberAdmin);?></p>
+                        <a href="../public/index.php?route=rights"
+                           class="btn btn-primary">Voir la listes</a>
+                    </div>
+
+
+            </div>
+
+    </section>
 
 
 
 
 
-
-
+</div>
 

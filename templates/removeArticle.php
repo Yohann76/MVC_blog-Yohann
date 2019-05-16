@@ -41,9 +41,6 @@
 <?php $this->title = "Nouvel article"; ?>
 <h1>modifier  un article</h1>
 
-
-<!-- Récupérer les information d'un chapitre ici et les mettre dedans  -->
-
 <div>
     <form method="post" action="../public/index.php?route=mooveArticle"
 

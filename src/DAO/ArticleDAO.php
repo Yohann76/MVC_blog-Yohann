@@ -43,17 +43,14 @@ class ArticleDAO extends DAO
 
     public function addArticle(Parameter $post)
     {
-        //Permet de récupérer les variables $title, $content et $author
         $sql = 'INSERT INTO article (title, content, author,chapo,createdAt) VALUES (?, ?, ?, ?,NOW())';
         $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author'),$post->get('chapo')]);
     }
-
 
     public function deleteArticle($post)
     {
         $sql = 'DELETE FROM article WHERE id = ?';
         $this->createQuery($sql, [$post]   );
-
     }
 
     public function mooveArticle($post)

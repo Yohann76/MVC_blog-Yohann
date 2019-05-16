@@ -11,7 +11,7 @@ class ConnexionController extends Controller
      */
     public function connect(Parameter $post)
     {
-        // Si le form de connection est envoyer :
+        // Si le formulaire de connection est envoyer :
         if($post->get('submit')) {
             $this->userDAO->getHash($post->get('mail'));
            // Check si le membre existe
@@ -53,38 +53,13 @@ class ConnexionController extends Controller
     {
         if($post->get('submit')) {
             $this->userDAO->addUser($post);
-            header('Location: ../public/index.php'); /* a rediriger sur une page membre */
+            header('Location: ../public/index.php');
         }
             return $this->view->render('connection', [
                 'post' => $post
             ]);
     }
-    // Display page Admin
-    public function displayAdmin()
-    {
-         $nbrArticle = $this->userDAO->nbrArticle();
-         $numberArticle = $nbrArticle[0] ;
 
-         $nbrCommentVerified = $this->userDAO->nbrCommentVerified();
-         $numberCommentVerified = $nbrCommentVerified[0] ;
-
-         $nbrCommentNotVerified = $this->userDAO->nbrCommentNotVerified();
-         $numberCommentNotVerified = $nbrCommentNotVerified[0] ;
-
-         $nbrMembers =  $this->userDAO->nbrMembers();
-         $numberMembers = $nbrMembers[0] ;
-
-         $nbrAdmin = $this->userDAO->nbrAdmin();
-         $numberAdmin = $nbrAdmin[0] ;
-
-        return $this->view->render('backoffice', [
-            'numberArticle' => $numberArticle,
-            'numberCommentVerified' => $numberCommentVerified,
-            'numberCommentNotVerified' => $numberCommentNotVerified,
-            'numberMembers' => $numberMembers,
-            'numberAdmin' => $numberAdmin
-        ]);
-    }
 
 
 } // end class

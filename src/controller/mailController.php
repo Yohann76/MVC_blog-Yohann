@@ -16,10 +16,10 @@ class MailController extends Controller
         $subject = $post->get('subject') ;
         $body = $post->get('message') ;
 
-        // Create the Transport
+        //  SSL
         $https['ssl']['verify_peer'] = FALSE;
         $https['ssl']['verify_peer_name'] = FALSE; // seems to work fine without this line so far
-
+        // Create the Transport
         $transport = (new \Swift_SmtpTransport(EMAIL_HOST, EMAIL_PORT))
             ->setUsername(EMAIL_USERNAME)
             ->setPassword(EMAIL_PASSWORD)
@@ -37,9 +37,8 @@ class MailController extends Controller
 
         // Send the message
         $result = $mailer->send($message);
-        var_dump($result) ;
 
         header('Location: ../public/index.php?route=home');
     }
 
-} // end class
+}
