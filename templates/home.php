@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Portfolio</h2>
+                <h2>Mes projets</h2>
                 <hr class="star-primary">
             </div>
         </div>
@@ -79,21 +79,26 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>About</h2>
+                <h2>Mon profil</h2>
                 <hr class="star-light">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+                <p>Je suis un développeur web spécialisé dans le back-end. J'utilise PHP et symfony pour remplir toute sorte de mission.
+                    Je maitrise aussi d'autres technologie comme les langages lié au bases de donnée, le HTML/CSS.
+                     </p>
+
             </div>
             <div class="col-lg-4">
-                <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                <p>Cela fait longtemps que je suis passionné par les technologies du web. J’ai donc chercher a m’instruire afin
+                    de construire une carrière a partir de ma passion. Le développement back-end est ma spécialité.</p>
+
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <a href="index.php?route=cv" class="btn btn-lg btn-outline">
 
-                    <i class="fa fa-download"></i> Download CV
+                    <i class="fa fa-download"></i>Télécharger le CV
                 </a>
             </div>
         </div>
@@ -105,22 +110,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Contact Me</h2>
+                <h2>CONTACTEZ MOI</h2>
                 <hr class="star-primary">
             </div>
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-
 
                 <form method="post" action="../public/index.php?route=sendMail">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <!-- Name -->
                             <label>Name</label>
-                            <input name="name" type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <input name="name" type="text" class="form-control" placeholder="Nom" id="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -128,7 +130,7 @@
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <!-- Mail -->
                             <label>Email Address</label>
-                            <input name="mail" type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <input name="mail" type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email address.">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

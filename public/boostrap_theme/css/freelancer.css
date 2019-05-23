@@ -594,3 +594,60 @@ fieldset[disabled] .btn-success.active {
   background-image: none;
   border-color: #28a745;
 }
+
+/* div pour commenter */
+#formCom {
+    width: auto ;
+    padding-left: 30% ;
+}
+
+/* textaera com */
+#content-textarea {
+    color : forestgreen ;
+    width:70%;
+    height:150px;
+    text-align: center ;
+}
+
+
+p span, h1 span , h4 span{
+    color : forestgreen;
+}
+
+#connectCom {
+    text-align: center ;
+}
+
+/* add article */
+#addArticle {
+  width: 40% ;
+  text-align: center ;
+  margin : auto ;
+  padding: auto ;
+}
+
+#contentAddArticle, #contentMooveArticle {
+  color : forestgreen ;
+  width:70%;
+  height:150px;
+  text-align: center ;
+}
+
+#contentArticle {
+  color : forestgreen ;
+  text-align: center ;
+  width: 70%;
+
+}
+
+#members-page {
+
+  width: 60%;
+  margin: auto ;
+  margin-bottom: 250px ;
+}
+
+ol li {
+  color : green ;
+  font-size: 18px;
+}

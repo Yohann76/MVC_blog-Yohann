@@ -1,3 +1,4 @@
+<?php $this->title = "Nouvel article"; ?>
 <!-- Navigation -->
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -38,30 +39,30 @@
     <!-- /.container-fluid -->
 </nav>
 
-<?php $this->title = "Nouvel article"; ?>
+
 <h1>Ajouter un article</h1>
 
-<div>
+<div id="addArticle">
     <form method="post" action="../public/index.php?route=addArticle">
-        <label for="title">Titre</label><br>
-        <input type="text" id="title" name="title"><br>
+        <h4><span><label for="title">Titre</label><br></span> </h4>
+        <input type="text" id="contentArticle" name="title"><br>
 
-        <label for="content">Chapo</label><br>
-        <textarea id="chapo" name="chapo"></textarea><br>
+        <h4><span><label for="content">Chapo</label><br></span></h4>
+        <textarea id="contentAddArticle" name="chapo"></textarea><br>
 
-        <label for="content">Contenu</label><br>
-        <textarea id="content" name="content"></textarea><br>
+        <h4><span><label for="content">Contenu</label><br></span></h4>
+        <textarea id="contentAddArticle" name="content"></textarea><br>
 
-        <label for="author">Auteur</label><br>
-        <input type="text" id="author" name="author"><br>
+        <h4><span><label for="author">Auteur</label><br></span></h4>
+        <input type="text" id="contentArticle" name="author"><br/><br/>
 
         <input type="submit" value="Envoyer" id="submitAddArticle" class="btn btn-outline-success" name="submit">
     </form>
+    <br/>
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>
 
 
-<?php $this->title = "Nouvel article"; ?>
 <h1>Liste de vos articles </h1>
 
 

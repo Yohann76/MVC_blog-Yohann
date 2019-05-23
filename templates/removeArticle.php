@@ -1,3 +1,4 @@
+<?php $this->title = "Modification"; ?>
 <!-- Navigation -->
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -38,24 +39,25 @@
     <!-- /.container-fluid -->
 </nav>
 
-<?php $this->title = "Nouvel article"; ?>
+
 <h1>modifier  un article</h1>
 
-<div>
-    <form method="post" action="../public/index.php?route=mooveArticle"
-
-        <label for="title">Titre </label><br>
-        <input value="<?= htmlspecialchars($article->getTitle());?>" type="text" id="title" name="title">     <br>
-
-        <label for="content">Contenu</label>      <br>
-        <textarea  id="content" name="content"><?= htmlspecialchars($article->getContent());?></textarea>    <br>
+<div id="addArticle">
+    <form method="post" action="../public/index.php?route=mooveArticle">
 
 
-        <label for="content">Chapo</label>      <br>
-        <textarea  id="chapo" name="chapo"><?= htmlspecialchars($article->getChapo());?></textarea>    <br>
+    <h4><span><label for="title">Titre</label><br></span></h4>
+        <input value="<?= htmlspecialchars($article->getTitle());?>" type="text" id="contentArticle" name="title">     <br>
 
-        <label for="author">Auteur</label><br>
-        <input value="<?= htmlspecialchars($article->getAuthor());?>" type="text" id="author" name="author">      <br>
+    <h4><span><label for="content">Contenu</label><br></span></h4>
+        <textarea  id="contentMooveArticle" name="content"><?= htmlspecialchars($article->getContent());?></textarea>    <br>
+
+
+    <h4><span><label for="content">Chapo</label><br></span></h4>
+        <textarea  id="contentMooveArticle" name="chapo"><?= htmlspecialchars($article->getChapo());?></textarea>    <br>
+
+    <h4><span>   <label for="author">Auteur</label><br></span></h4>
+        <input value="<?= htmlspecialchars($article->getAuthor());?>" type="text" id="contentArticle" name="author">      <br>
 
         <input type="hidden" name="id" id="" value=" <?= htmlspecialchars($article->getId());?>  "  />
 

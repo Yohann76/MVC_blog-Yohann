@@ -1,6 +1,6 @@
 <?php $this->title = "Article"; ?>
 
-<h2> Blog </h2>
+<h2> La liste de vos articles !  </h2>
 
 <!-- -------- -->
 <?php

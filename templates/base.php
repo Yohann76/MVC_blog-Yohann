@@ -109,23 +109,23 @@
                 <div class="footer-col col-md-4">
                     <h3>Se connecter</h3>
                     <?php if ($this->session->get('user')&&  $this->session->get('user') == 'admin' )  { ?>
-                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a><br/>
-                        <a href="../public/index.php?route=displayAdmin">page Admin</a>
+                       <h4><a href="../public/index.php?route=Déconnexion">Déconnexion</a><br/> </h4>
+                       <h4><a href="../public/index.php?route=displayAdmin">page Admin</a></h4>
                     <?php }
 
                     else if ($this->session->get('user') &&  $this->session->get('user') == 'membre' ){ ?>
-                        <a href="../public/index.php?route=Déconnexion">Déconnexion</a>
+                        <h4><a href="../public/index.php?route=Déconnexion">Déconnexion</a></h4>
                     <?php }
 
                     else { ?>
-                        <a href="../public/index.php?route=connection">Connection</a>
+                        <h4><a href="../public/index.php?route=connection">Connection</a></h4>
                     <?php }?>
 
 
 
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>Around the Web</h3>
+                    <h3>en savoir plus </h3>
                     <ul class="list-inline">
                         <li>
                             <a href="https://github.com/Yohann76"
@@ -148,8 +148,9 @@
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
-                    <h3>About Freelancer</h3>
-                    <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+                    <h3>A propos de moi</h3>
+                    <p>Passionné par les nouvelles technologie,je suis diplomée d'un BAC +2 "Développeur et intégrateur en
+                        réalisation d'application web" & Bientot BAC +3 !  </p>
                 </div>
             </div>
         </div>
@@ -158,7 +159,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    Copyright &copy; Your Website 2016
+                    Yohann Durand pour openclassrooms.
                 </div>
             </div>
         </div>

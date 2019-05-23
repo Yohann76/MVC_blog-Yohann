@@ -19,6 +19,8 @@ For use this project...
 This website is available in "http://www.openclassyohanndurand.fr/blog_yohann/public/index.php" 
 
 
+If you use the project on a local server, 
+Please check if your server is configured to send mail.
 
 if you want to modify this project,
 the following links you may be useful

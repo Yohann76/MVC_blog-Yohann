@@ -4,8 +4,6 @@ namespace App\src\controller;
 
 use App\config\Parameter;
 
-
-
 class MailController extends Controller
 {
     /* utilisation de Swift Mailer */
@@ -18,16 +16,11 @@ class MailController extends Controller
 
         //  SSL
         $https['ssl']['verify_peer'] = FALSE;
-        $https['ssl']['verify_peer_name'] = FALSE; // seems to work fine without this line so far
-        // Create the Transport
-        $transport = (new \Swift_SmtpTransport(EMAIL_HOST, EMAIL_PORT))
-            ->setUsername(EMAIL_USERNAME)
-            ->setPassword(EMAIL_PASSWORD)
-            ->setEncryption(EMAIL_ENCRYPTION) //For Gmail
-            ->setStreamOptions($https)
-        ;
-        $mailer = new \Swift_Mailer($transport);
+        $https['ssl']['verify_peer_name'] = FALSE;
 
+        $transport = new \Swift_SendmailTransport('/usr/sbin/sendmail -bs');
+
+        $mailer = new \Swift_Mailer($transport);
         // Create a message
         $message = (new \Swift_Message($subject))
             ->setFrom([$fromEmail => $fromUser])
@@ -40,5 +33,6 @@ class MailController extends Controller
 
         header('Location: ../public/index.php?route=home');
     }
+
 
 }
