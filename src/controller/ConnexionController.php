@@ -6,6 +6,19 @@ use App\config\Parameter;
 
 class ConnexionController extends Controller
 {
+    public function adminOrUsers($role) {
+        // si il est admin
+        if($role[0] == 'admin'){
+            $this->session->set('user', 'admin' ) ;
+            header('Location: ../public/index.php?route=displayAdmin');
+        }
+        // Si il est membre :
+        else if($role[0] == 'membre'){
+            $this->session->set('user', 'membre' ) ;
+            return $this->view->render('members', [
+            ]);
+        }
+    }
     /**
      * @param Parameter $post form connection
      */
@@ -14,7 +27,8 @@ class ConnexionController extends Controller
         // Si le formulaire de connection est envoyer :
         if($post->get('submit')) {
             $this->userDAO->getHash($post->get('mail'));
-           // Check si le membre existe
+
+            // Check si le membre existe
             $result = $this->userDAO->checkUser($post);
             // Si un compte existe
             if ($result == true) {
@@ -25,18 +39,8 @@ class ConnexionController extends Controller
                 $this->session->set('userMail', $result->getEmail() ) ;
                 $this->session->set('userId', $result->getId() ) ;
 
-                // Si il est admin :
-                if($role[0] == 'admin'){
-                    $this->session->set('user', 'admin' ) ;
-                    header('Location: ../public/index.php?route=displayAdmin'); /* a rediriger sur une page membre */
-
-                }
-                // Si il est membre :
-                else if($role[0] == 'membre'){
-                    $this->session->set('user', 'membre' ) ;
-                    return $this->view->render('members', [
-                    ]);
-                }
+                // Selon $role : on determine la session
+                $this->adminOrUsers($role) ;
             }
             // Si le comtpe existe pas
             else if ($result == false ){
