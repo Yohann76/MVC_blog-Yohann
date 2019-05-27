@@ -127,10 +127,6 @@ header .intro-text .skills {
   text-transform: uppercase;
   font-weight: 700;
   border: none;
-  /* display: none; /* Test Unit */
-
-
-
 }
 .navbar-custom a:focus {
   outline: none;

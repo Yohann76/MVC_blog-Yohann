@@ -77,7 +77,7 @@ class Router
                     $this->mailController->transport($this->request->getPost() );
                 }
 
-                // ADMIN ROUTER PROTEGER
+                // ADMIN ROUTER
                 // Afficher la gestion d'article
                 elseif ($route === 'addArticle'){
                     $this->backController->addArticle($this->request->getPost());

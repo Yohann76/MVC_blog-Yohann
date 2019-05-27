@@ -35,7 +35,9 @@ License : Free
 Standard :
 
 1. PSR2 ( https://www.php-fig.org/psr/psr-2/ )
-2. silver medal in sensolabs ( https://insight.symfony.com )
+2. Code verification: https://codeclimate.com/github/Yohann76/MVC_blog-Yohann 
+
+<a href="https://codeclimate.com/github/Yohann76/MVC_blog-Yohann/maintainability"><img src="https://api.codeclimate.com/v1/badges/06074927472cd9e10469/maintainability" /></a>
 
 
 
