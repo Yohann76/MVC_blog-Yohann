@@ -6,6 +6,9 @@ use App\config\Parameter;
 
 class ConnexionController extends Controller
 {
+    /**
+     * @param $role
+     */
     public function adminOrUsers($role) {
         // si il est admin
         if($role[0] == 'admin'){
@@ -16,6 +19,28 @@ class ConnexionController extends Controller
         else if($role[0] == 'membre'){
             $this->session->set('user', 'membre' ) ;
             return $this->view->render('members', [
+            ]);
+        }
+    }
+
+    /**
+     * @param $result
+     * @param $post
+     */
+    public function trueAccount($result, $post) {
+        // Si un compte existe
+        if ($result == true) {
+            $role = $this->userDAO->checkRole($post);
+            $this->session->set('userFirst_name', $result->getFirstName() ) ;
+            $this->session->set('userLast_name', $result->getLastName() ) ;
+            $this->session->set('userMail', $result->getEmail() ) ;
+            $this->session->set('userId', $result->getId() ) ;
+            // Selon $role : on determine la session
+            $this->adminOrUsers($role) ;
+        }
+        // Si le comtpe existe pas
+        else if ($result == false ){
+            return $this->view->render('connection', [
             ]);
         }
     }
@@ -30,23 +55,10 @@ class ConnexionController extends Controller
 
             // Check si le membre existe
             $result = $this->userDAO->checkUser($post);
+
             // Si un compte existe
-            if ($result == true) {
-                $role = $this->userDAO->checkRole($post);
+            $this->trueAccount($result,$post) ;
 
-                $this->session->set('userFirst_name', $result->getFirstName() ) ;
-                $this->session->set('userLast_name', $result->getLastName() ) ;
-                $this->session->set('userMail', $result->getEmail() ) ;
-                $this->session->set('userId', $result->getId() ) ;
-
-                // Selon $role : on determine la session
-                $this->adminOrUsers($role) ;
-            }
-            // Si le comtpe existe pas
-            else if ($result == false ){
-                return $this->view->render('connection', [
-                ]);
-            }
         }
     }
 
@@ -64,6 +76,4 @@ class ConnexionController extends Controller
             ]);
     }
 
-
-
-} // end class
+}
