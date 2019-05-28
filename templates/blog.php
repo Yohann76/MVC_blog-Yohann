@@ -11,7 +11,6 @@ foreach ($articles as $article)
 <div class="jumbotron">
     <div class="container">
         <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
         <p><?= htmlspecialchars($article->getAuthor());?></p>
         <p><?= htmlspecialchars($article->getChapo());?></p>
         <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>

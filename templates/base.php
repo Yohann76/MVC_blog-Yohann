@@ -115,6 +115,7 @@
 
                     else if ($this->session->get('user') &&  $this->session->get('user') == 'membre' ){ ?>
                         <h4><a href="../public/index.php?route=Déconnexion">Déconnexion</a></h4>
+                        <h4><a href="../public/index.php?route=displayMembers">page Membre</a></h4>
                     <?php }
 
                     else { ?>

@@ -59,7 +59,6 @@ class Router
                 }
                 // Route pour gerer la connexion suite au formulaire
                 elseif ($route === 'connect'){
-                   // var_dump($_POST);
                     $this->connexionController->connect($this->request->getPost());
                 }
                 // Route pour gerer l'inscription suite au formulaire
@@ -124,6 +123,10 @@ class Router
                 // Route pour Afficher la page admin
                 elseif ($route === 'displayAdmin'){
                     $this->backController->displayAdmin();
+                }
+                // route pour afficher la page membre
+                elseif ($route === 'displayMembers') {
+                    $this->backController->displayMembers();
                 }
             }
             else{

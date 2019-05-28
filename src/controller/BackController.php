@@ -170,4 +170,8 @@ class BackController extends Controller
         ]);
     }
 
+    public function displayMembers() {
+        return $this->view->render('members', [
+        ]);
+    }
 }

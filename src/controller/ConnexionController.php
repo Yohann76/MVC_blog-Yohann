@@ -69,11 +69,10 @@ class ConnexionController extends Controller
     {
         if($post->get('submit')) {
             $this->userDAO->addUser($post);
-            header('Location: ../public/index.php');
+            header('Location: ../public/index.php?route=connection');
         }
             return $this->view->render('connection', [
                 'post' => $post
             ]);
     }
-
 }
