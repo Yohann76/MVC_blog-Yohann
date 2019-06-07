@@ -1,4 +1,4 @@
-<?= $this->session->show('add_article'); ?>
+<?php $this->title = "Portfolio"; ?>
 <!-- ------------------------------------------------------ -->
 <!-- Portfolio Grid Section -->
 <section id="portfolio">

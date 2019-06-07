@@ -2,7 +2,6 @@
 
 <h1>Article</h1>
 
-
 <div class="jumbotron">
     <h1 class="display-4"><span> <?= htmlspecialchars($article->getTitle());?> </span></h1>
     <p> <?= htmlspecialchars($article->getChapo());?> </p>

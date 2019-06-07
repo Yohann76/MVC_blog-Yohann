@@ -1,4 +1,4 @@
-<?php $this->title = "Article"; ?>
+<?php $this->title = "Blog"; ?>
 
 <h2> La liste de vos articles !  </h2>
 

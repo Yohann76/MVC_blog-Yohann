@@ -70,7 +70,6 @@ class Router
                 elseif ($route === 'Déconnexion'){
                     $this->frontController->Déconnexion();
                 }
-
                 // Mail
                 elseif ($route === 'sendMail'){
                     $this->mailController->transport($this->request->getPost() );
@@ -127,6 +126,9 @@ class Router
                 // route pour afficher la page membre
                 elseif ($route === 'displayMembers') {
                     $this->backController->displayMembers();
+                }
+                else {
+                    $this->errorController->errorNotFound();
                 }
             }
             else{

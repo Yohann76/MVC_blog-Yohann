@@ -1,3 +1,4 @@
+<?php $this->title = "Membre"; ?>
 <h1> Bienvenu sur votre page membre !<br/>
     <?= $this->session->show('userFirst_name'); ?>
     <?= $this->session->show('userLast_name'); ?> <br/> <br/></h1>

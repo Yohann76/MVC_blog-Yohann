@@ -1,5 +1,5 @@
+<?php $this->title = "Droits"; ?>
 <!-- Navigation -->
-
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +38,6 @@
     <!-- /.container-fluid -->
 </nav>
 
-<?php $this->title = "Droits"; ?>
 <h1>Gestion des droits </h1>
 
 <h2>Administrateurs </h2>

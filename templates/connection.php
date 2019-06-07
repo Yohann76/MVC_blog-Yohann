@@ -1,3 +1,4 @@
+<?php $this->title = "Connection"; ?>
 <div class="form-co">
     <!-- Connection -->
     <form class="form-signin" method="post" action="../public/index.php?route=connect">

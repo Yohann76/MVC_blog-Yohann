@@ -1,4 +1,4 @@
-<?php $this->title = "Nouvel article"; ?>
+<?php $this->title = "Article"; ?>
 <!-- Navigation -->
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">

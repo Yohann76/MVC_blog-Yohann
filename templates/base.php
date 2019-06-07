@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Portfolio Yohann Durand">
     <meta name="author" content="Yohann Durand">
+    <link rel="icon" href="boostrap_theme/img/faviconY.ico" />
 
     <title><?= $title ?></title>
     <!-- Composer Boostrap -->
@@ -33,6 +34,7 @@
 
     <!-- add Sweet Alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 
 </head>
 
