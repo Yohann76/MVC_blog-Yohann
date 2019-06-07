@@ -36,9 +36,6 @@
 
 </head>
 
-
-
-<!-- ------------------------------------------- -->
 <body id="page-top" class="index">
 
 <!-- Navigation -->
@@ -69,7 +66,7 @@
                     <a href="../public/index.php#contact">Contact</a>
                 </li>
                 <li class="page-scroll">
-                    <a href="../public/index.php?route=displayBlog">Blog</a>
+                    <a href="../public/index.php?route=displayBlog&page=1">Blog</a>
                 </li>
             </ul>
         </div>

@@ -21,3 +21,23 @@ foreach ($articles as $article)
     <?php
 }
 ?>
+
+<!-- pagination -->
+<nav aria-label="pagination">
+    <ul class="pagination">
+        <h6> Page </h6>
+        <?php
+        for($i=1;$i<=ceil($nbArticleTotal/3);$i++)
+        {
+            $affichage = ceil($i);
+            if ($affichage == $pageCourante)
+            {
+                echo '<li class="green" class="page-item"><a class="page-link" href="../public/index.php?route=displayBlog&page=' . ceil($i) . '">' . $affichage . '</a></li>';
+            }
+            else {
+                echo '<li class="page-item"><a class="page-link" href="../public/index.php?route=displayBlog&page=' . ceil($i) . '">' . $affichage . '</a></li>';
+            }
+        }
+        ?>
+    </ul>
+</nav>

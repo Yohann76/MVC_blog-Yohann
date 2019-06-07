@@ -12,7 +12,6 @@ class FrontController extends Controller
         ]);
     }
 
-
     public function article($articleId)
     {
         $article = $this->articleDAO->getArticle($articleId);
@@ -24,10 +23,25 @@ class FrontController extends Controller
         ]);
     }
 
-    public function displayBlog() {
-        $articles = $this->articleDAO->getArticles();
-        return $this->view->render('blog', [
-            'articles' => $articles
+    public function displayBlog($page) {
+        $page = intval($page);
+        $articleInPage = 3 ;
+        // For count Article
+        $NombreArticleTotal = $this->articleDAO->articleCount();
+        if(isset($page) AND !empty($page)  )
+        {
+            $page = intval($page);
+            $pageCourante = $page;
+        }
+        else{
+            $pageCourante = 1;
+        }
+        $depart = ($pageCourante-1) *$articleInPage; ;
+        $articles = $this->articleDAO->getArticlesBlog($depart,$articleInPage );
+        $this->view->render('blog', [
+            'articles' => $articles,
+            'nbArticleTotal' =>$NombreArticleTotal,
+            'pageCourante' => $pageCourante
         ]);
     }
 

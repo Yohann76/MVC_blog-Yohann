@@ -43,7 +43,7 @@ class Router
                 }
                 // Route pour afficher la liste de blog
                 elseif ($route === 'displayBlog'){
-                    $this->frontController->displayBlog();
+                      $this->frontController->displayBlog($this->request->getGet()->get('page'));
                 }
                 // DownloadCv
                 else if($_GET['route'] === 'cv') {

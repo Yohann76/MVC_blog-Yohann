@@ -57,7 +57,38 @@ class ArticleDAO extends DAO
     {
         $sql = 'UPDATE article SET title = ?, content = ?, author = ?, chapo = ?, createdAt = NOW() WHERE id=?;';
         $this->createQuery($sql, [$post->get('title'), $post->get('content'), $post->get('author'),$post->get('chapo'),$post->get('id') ]);
+    }
 
+    // For pagination
+    public function getArticlesBlog($depart,$articleInPage)
+    {
+        $sql =('SELECT id, title, content, author, createdAt,chapo
+                FROM `article`
+                ORDER BY id DESC 
+                LIMIT ' . $depart . ' , ' . $articleInPage . '
+                ');
+        $result = $this->createQuery($sql,[]);
+        $articles = [];
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        return $articles;
+    }
 
+    public function articleCount()
+    {
+        $sql = 'SELECT id, title, content, author, createdAt,chapo
+                FROM article
+                ORDER BY id DESC';
+        $result = $this->createQuery($sql);
+        $article = [];
+        $x = 0;
+        foreach ($result as $row) {
+            $articleId = $row['id'];
+            $article[$articleId] = $this->buildObject($row);
+            $x = $x + 1;
+        }
+        return $x;
     }
 }

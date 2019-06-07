@@ -138,7 +138,7 @@ class BackController extends Controller
     public function addComment(Parameter $post)
     {
         $this->commentDAO->addComment($post);
-        header('Location: ../public/index.php?route=displayBlog');
+        header('Location: ../public/index.php?route=displayBlog&page=1');
     }
 
     // Display page Admin

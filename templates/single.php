@@ -11,7 +11,7 @@
     <hr class="my-4">
     <p>Le <?=htmlspecialchars($article->getCreatedAt());?>  Par <?= htmlspecialchars($article->getAuthor());?></p>
 
-    <p>  <a href="../public/index.php?route=displayBlog">Retour au blog <span class="glyphicon glyphicon glyphicon-hand-right"></span></a></p>
+    <p>  <a href="../public/index.php?route=displayBlog&page=1">Retour au blog <span class="glyphicon glyphicon glyphicon-hand-right"></span></a></p>
     <br/>
     <hr class="my-4">
     <h2>Commentaires :</h2>
@@ -27,10 +27,6 @@
         <?php
     }
     ?>
-
-
-
-
 
     <!-- Si une session est défini on propose de commenter : -->
     <?php if ($this->session->get('user')  )  { ?>
