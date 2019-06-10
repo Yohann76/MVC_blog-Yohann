@@ -3,7 +3,6 @@
 
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
@@ -11,7 +10,6 @@
             <a class="navbar-brand" href="#page-top">Yohann Durand </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
@@ -39,7 +37,6 @@
     <!-- /.container-fluid -->
 </nav>
 
-
 <h1>Ajouter un article</h1>
 
 <div id="addArticle">
@@ -47,7 +44,7 @@
         <h4><span><label for="title">Titre</label><br></span> </h4>
         <input type="text" id="contentArticle" name="title"><br>
 
-        <h4><span><label for="content">Chapo</label><br></span></h4>
+        <h4><span><label for="content">Chapô</label><br></span></h4>
         <textarea id="contentAddArticle" name="chapo"></textarea><br>
 
         <h4><span><label for="content">Contenu</label><br></span></h4>
@@ -62,9 +59,7 @@
     <a href="../public/index.php">Retour à l'accueil</a>
 </div>
 
-
 <h1>Liste de vos articles </h1>
-
 
 <table class="table table-dark">
     <thead>

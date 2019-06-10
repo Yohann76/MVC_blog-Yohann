@@ -19,7 +19,6 @@ abstract class Controller
     protected $get;
     protected $post;
     protected $session;
-   
 
     public function __construct()
     {

@@ -27,7 +27,6 @@ class Article
         $this->chapo = $chapo;
     }
 
-
     public function getId()
     {
         return $this->id;

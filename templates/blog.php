@@ -2,7 +2,6 @@
 
 <h2> La liste de vos articles !  </h2>
 
-<!-- -------- -->
 <?php
 foreach ($articles as $article)
 {

@@ -52,13 +52,10 @@ class ConnexionController extends Controller
         // Si le formulaire de connection est envoyer :
         if($post->get('submit')) {
             $this->userDAO->getHash($post->get('mail'));
-
             // Check si le membre existe
             $result = $this->userDAO->checkUser($post);
-
             // Si un compte existe
             $this->trueAccount($result,$post) ;
-
         }
     }
 

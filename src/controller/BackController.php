@@ -79,12 +79,13 @@ class BackController extends Controller
 
     }
     // Afficher la liste des commentaires
+
+
     public function comment()
     {
         $this->checkAdmin() ;
         $listCommentNotVerified = $this->commentDAO->getListCommentNotVerified();
         $listCommentVerified = $this->commentDAO->getListCommentVerified();
-
 
         return $this->view->render('comment', [
             'listCommentNotVerified' => $listCommentNotVerified,

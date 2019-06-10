@@ -2,7 +2,7 @@
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
+
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
@@ -10,7 +10,6 @@
             <a class="navbar-brand" href="#page-top">Yohann Durand </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
@@ -45,9 +44,6 @@
 
 <br/>
 <br/>
-
-
-
 <br/>
 
 <div class="container">
@@ -56,39 +52,33 @@
 
             <div class="icon-stats">  <i class="fas fa-scroll"></i>   </div>
                 <div class="card-body">
-                    <h5 class="card-title">Nombre d'article</h5>
+                    <h5 class="card-title">Nombre d'articles</h5>
                     <p class="card-text"><?= htmlspecialchars($numberArticle);?> </p>
                     <a href="../public/index.php?route=addArticle"
-                    class="btn btn-primary">Voir la listes</a>
+                    class="btn btn-primary">Voir la liste</a>
                 </div>
-
-
         </div>
 
         <div class="col-sm-4">
 
             <div class="icon-stats"><i class="fas fa-chalkboard-teacher"></i> </div>
                 <div class="card-body">
-                    <h5 class="card-title">Commentaire vérifié</h5>
+                    <h5 class="card-title">Commentaire vérifiés</h5>
                     <p class="card-text"><?= htmlspecialchars($numberCommentVerified);?></p>
                     <a href="../public/index.php?route=comment"
-                       class="btn btn-primary">Voir la listes</a>
+                       class="btn btn-primary">Voir la liste</a>
                 </div>
-
-
         </div>
 
         <div class="col-sm-4">
 
             <div class="icon-stats">  <i class="fas fa-chalkboard"></i>   </div>
                 <div class="card-body">
-                    <h5 class="card-title">Commentaire en attente</h5>
+                    <h5 class="card-title">Commentaires en attente</h5>
                     <p class="card-text"><?= htmlspecialchars($numberCommentNotVerified);?></p>
                     <a href="../public/index.php?route=comment"
-                       class="btn btn-primary">Voir la listes</a>
+                       class="btn btn-primary">Voir la liste</a>
                 </div>
-
-
         </div>
 
 
@@ -101,10 +91,10 @@
 
             <div class="icon-stats">  <i class="far fa-user"></i>  </div>
                 <div class="card-body">
-                    <h5 class="card-title">NOMBRE DE MEMBRE</h5>
+                    <h5 class="card-title">NOMBRE DE MEMBRES</h5>
                     <p class="card-text"><?= htmlspecialchars($numberMembers);?></p>
                     <a href="../public/index.php?route=rights"
-                       class="btn btn-primary">Voir la listes</a>
+                       class="btn btn-primary">Voir la liste</a>
 
                 </div>
         </div>
@@ -114,20 +104,13 @@
 
                 <div class="icon-stats">  <i class="fas fa-user"></i>  </div>
                     <div class="card-body">
-                        <h5 class="card-title">NOMBRE D'ADMINISTRATEUR</h5>
+                        <h5 class="card-title">NOMBRE D'ADMINISTRATEURS</h5>
                         <p class="card-text"><?= htmlspecialchars($numberAdmin);?></p>
                         <a href="../public/index.php?route=rights"
-                           class="btn btn-primary">Voir la listes</a>
+                           class="btn btn-primary">Voir la liste</a>
                     </div>
-
-
             </div>
 
     </section>
-
-
-
-
-
 </div>
 

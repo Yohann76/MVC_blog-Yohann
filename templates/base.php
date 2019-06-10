@@ -43,16 +43,12 @@
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#page-top">Yohann Durand</a>
-           <!-- <img class="img-responsive" src="boostrap_theme/img/logo.png" alt=""> -->
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
@@ -95,11 +91,11 @@
         </div>
     </div>
 </header>
-<!-- ------------------------------------------ -->
+
 <div id="content">
     <?= $content ?>
 </div>
-<!-- --------------------------------------- -->
+
 <!-- Footer -->
 <footer class="text-center">
     <div class="footer-above">
@@ -121,8 +117,6 @@
                         <h4><a href="../public/index.php?route=connection">Connection</a></h4>
                     <?php }?>
 
-
-
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>en savoir plus </h3>
@@ -143,14 +137,12 @@
                             <a href="https://twitter.com/yohann_durand"
                                class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                         </li>
-
-
                     </ul>
                 </div>
                 <div class="footer-col col-md-4">
                     <h3>A propos de moi</h3>
-                    <p>Passionné par les nouvelles technologie,je suis diplomée d'un BAC +2 "Développeur et intégrateur en
-                        réalisation d'application web" & Bientot BAC +3 !  </p>
+                    <p>Passionné par les nouvelles technologies , je suis diplômé d'un BAC +2 "Développeur et intégrateur en
+                        réalisation d'applications web" & Bientot BAC +3 !  </p>
                 </div>
             </div>
         </div>
@@ -166,7 +158,7 @@
     </div>
 </footer>
 
-<!--------------------------------------- -->
+
 <!-- jQuery -->
 <script src="boostrap_theme/vendor/jquery/jquery.min.js"></script>
 
@@ -186,8 +178,6 @@
 
 <!-- Sweet alert  Script-->
 <script src="boostrap_theme/js/sweetAlert.js"></script>
-
-<!-- ------------------- -->
 
 </body>
 </html>

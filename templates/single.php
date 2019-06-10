@@ -27,7 +27,7 @@
     }
     ?>
 
-    <!-- Si une session est défini on propose de commenter : -->
+    <!-- Si une session est défini on propose un commentaire : -->
     <?php if ($this->session->get('user')  )  { ?>
 
         <h3> Vous pouvez egalement laisser un commentaire : </h3>

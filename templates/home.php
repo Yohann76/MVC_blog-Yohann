@@ -1,5 +1,4 @@
 <?php $this->title = "Portfolio"; ?>
-<!-- ------------------------------------------------------ -->
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
     <div class="container">
@@ -85,14 +84,14 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-2">
-                <p>Je suis un développeur web spécialisé dans le back-end. J'utilise PHP et symfony pour remplir toute sorte de mission.
-                    Je maitrise aussi d'autres technologie comme les langages lié au bases de donnée, le HTML/CSS.
+                <p>Je suis un développeur web spécialisé dans le back-end. J'utilise PHP et symfony pour remplir toutes sortes de missions.
+                    Je maîtrise aussi d'autres technologies comme les langages liés aux bases de données, le HTML/CSS.
                      </p>
 
             </div>
             <div class="col-lg-4">
-                <p>Cela fait longtemps que je suis passionné par les technologies du web. J’ai donc chercher a m’instruire afin
-                    de construire une carrière a partir de ma passion. Le développement back-end est ma spécialité.</p>
+                <p>Cela fait longtemps que je suis passionné par les technologies du web. J’ai donc chercher à m’instruire afin
+                    de construire une carrière à partir de ma passion. Le développement back-end est ma spécialité.</p>
 
             </div>
             <div class="col-lg-8 col-lg-offset-2 text-center">

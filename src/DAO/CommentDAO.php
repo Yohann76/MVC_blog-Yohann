@@ -35,7 +35,6 @@ class CommentDAO extends DAO
         $this->createQuery($sql, [$articleId]   );
     }
 
-
     // Ajouter un commentaire
     public function addComment($post)
     {
@@ -70,7 +69,6 @@ class CommentDAO extends DAO
         }
         $result->closeCursor();
         return $listCommentVerified;
-
     }
 
     public function verifiedComment($post){

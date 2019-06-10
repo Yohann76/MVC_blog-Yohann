@@ -111,7 +111,6 @@ class UserDAO extends DAO
         return $nbrArticle ;
     }
 
-
     public function nbrCommentVerified(){
         $sql = 'SELECT COUNT(*) FROM comment WHERE verified = "true" ';
         $result = $this->createQuery($sql);

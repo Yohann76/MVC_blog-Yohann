@@ -36,10 +36,6 @@ abstract class DAO
         }
 
     }
-    protected function attribuer($chaine,$variable)
-    {
-        $this->bindValue($chaine, intval($variable ), \PDO::PARAM_INT);
-    }
 
     protected function createQuery($sql, $parameters = null)
     {
